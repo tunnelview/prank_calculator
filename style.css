@@ -1,9 +1,14 @@
+:root {
+  --main: rgb(25, 201, 207);
+}
+
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* for the whole page */
 .wrapper {
   min-height: 100vh;
   background: linear-gradient(
@@ -36,10 +41,11 @@ body {
   padding: 1rem;
   font-weight: bolder;
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
+  background-color: white;
 
   display: flex;
   justify-content: flex-end;
-  color: white;
+  color: rgb(69, 155, 182);
 }
 
 /* items section  */
@@ -54,6 +60,22 @@ body {
     "no4 no5 no6 minus"
     "no1 no2 no3 ans"
     "dot no0 no0 ans";
+}
+
+.items > button {
+  cursor: pointer;
+  min-height: 70px;
+  box-shadow: violet;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  color: rgb(25, 201, 207);
+  background: rgba(194, 108, 190, 0.479);
+  border-radius: 3px;
+  border: none;
+}
+
+.items > button:hover {
+  background: orchid;
 }
 
 .clear {

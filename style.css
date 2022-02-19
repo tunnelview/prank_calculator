@@ -46,6 +46,8 @@ body {
   display: flex;
   justify-content: flex-end;
   color: rgb(69, 155, 182);
+
+  overflow: hidden;
 }
 
 /* items section  */

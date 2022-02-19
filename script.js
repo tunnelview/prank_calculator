@@ -6,6 +6,10 @@
 
 // grab the buttons
 const buttons = document.querySelectorAll("button");
+const displayEml = document.querySelector("#result");
+
+// Creating global variable
+let textToDisplay = ""; // initialized to nothing
 
 // loop through the buttons
 
@@ -14,7 +18,17 @@ buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     //   grab the value
     const val = btn.innerText;
+    textToDisplay += val; // concatenate the pressed values
     // console.log(btn);
-    console.log(val);
+
+    // display the value of button
+    displayEml.innerText = val;
+    console.log(val); // console log it to check
+
+    display(val);
   });
 });
+
+const display = (toDisplay) => {
+  displayEml.innerText = val;
+};

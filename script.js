@@ -22,13 +22,13 @@ buttons.forEach((btn) => {
     // console.log(btn);
 
     // display the value of button
-    displayEml.innerText = val;
+    // displayEml.innerText = val; this is done outside the function in line 33
     console.log(val); // console log it to check
 
-    display(val);
+    display(textToDisplay); //textTodisplay is the variable that holds all the click items
   });
 });
 
 const display = (toDisplay) => {
-  displayEml.innerText = val;
+  displayEml.innerText = toDisplay;
 };

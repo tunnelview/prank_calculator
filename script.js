@@ -24,7 +24,7 @@ buttons.forEach((btn) => {
     displayEml.classList.add("prank");
 
     // remove the class name after animate ends
-    display.addEventListener("animationend", () => {
+    displayEml.addEventListener("animationend", () => {
       displayEml.classList.remove("prank"); // line 27 and 28 to remove the animation soon after the prank is over.
     });
 

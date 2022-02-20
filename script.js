@@ -32,3 +32,10 @@ buttons.forEach((btn) => {
 const display = (toDisplay) => {
   displayEml.innerText = toDisplay;
 };
+
+// create a function to
+
+const onTotal = () => {
+  const total = eval(textToDisplay);
+  display(total); //calling and invoking the function
+};

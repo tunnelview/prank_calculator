@@ -137,3 +137,23 @@ body {
 .ans {
   grid-area: ans;
 }
+
+/* prank animation */
+.prank {
+  animation: shake 0.3s ease-in;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(10px);
+  }
+  50% {
+    transform: translate(-10px);
+  }
+  75% {
+    transform: translate(10px);
+  }
+  100% {
+    transform: translate(-10px);
+  }
+}

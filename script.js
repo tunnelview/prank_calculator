@@ -17,6 +17,17 @@ let textToDisplay = ""; // initialized to nothing
 buttons.forEach((btn) => {
   // add listener
   btn.addEventListener("click", () => {
+    displayEml.style.backgroundColor = "green";
+    displayEml.style.color = "white";
+
+    // animation
+    displayEml.classList.add("prank");
+
+    // remove the class name after animate ends
+    display.addEventListener("animationend", () => {
+      displayEml.classList.remove("prank"); // line 27 and 28 to remove the animation soon after the prank is over.
+    });
+
     //   grab the value
     const val = btn.innerText;
     const lastChar = textToDisplay[textToDisplay.length - 1];
@@ -80,6 +91,13 @@ const display = (toDisplay) => {
 
 const onTotal = () => {
   const prankNum = randomNumber(); // const and prankNum was written together, fixed it.
+
+  if (prankNum > 0) {
+    //do any or something
+    displayEml.style.backgroundColor = "red";
+    displayEml.style.color = "white";
+  }
+
   const total = eval(textToDisplay) + prankNum;
   //   display(total); //calling and invoking the function
   console.log(prankNum);

@@ -7,6 +7,7 @@
 // grab the buttons
 const buttons = document.querySelectorAll("button");
 const displayEml = document.querySelector("#result");
+const symbols = ["+", "-", "*", "/"]; // creating an array of symbols
 
 // Creating global variable
 let textToDisplay = ""; // initialized to nothing
@@ -19,6 +20,8 @@ buttons.forEach((btn) => {
     //   grab the value
     const val = btn.innerText;
 
+    if (textToDisplay.length < 1 && symbols.includes(val)) return; // this is prevent the user from pressing the symbols first
+
     //AC clear everything from the display
     if (val === "AC") {
       return resetDisplay();
@@ -29,6 +32,12 @@ buttons.forEach((btn) => {
     // displayed on the result section - in line 26 - 28.
 
     if (val === "=") {
+      //check if the last character is a symbol - Last Step
+      const lastChar = textToDisplay[textToDisplay.length - 1]; // this is to grab the last character
+      if (symbols.includes(lastChar)) {
+        // this means, if the last character is one of the symbols, then remove it and call it.
+        textToDisplay = textToDisplay.slice(0, -1); //then remove it and call onTotal().
+      }
       return onTotal();
     }
 

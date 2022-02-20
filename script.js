@@ -17,16 +17,11 @@ let textToDisplay = ""; // initialized to nothing
 buttons.forEach((btn) => {
   // add listener
   btn.addEventListener("click", () => {
-    displayEml.style.backgroundColor = "green";
-    displayEml.style.color = "white";
+    displayEml.style.backgroundColor = "";
+    displayEml.style.color = "";
 
     // animation
-    displayEml.classList.add("prank");
-
-    // remove the class name after animate ends
-    displayEml.addEventListener("animationend", () => {
-      displayEml.classList.remove("prank"); // line 27 and 28 to remove the animation soon after the prank is over.
-    });
+    // displayEml.classList.add("prank");
 
     //   grab the value
     const val = btn.innerText;
@@ -96,7 +91,16 @@ const onTotal = () => {
     //do any or something
     displayEml.style.backgroundColor = "red";
     displayEml.style.color = "white";
+
+    displayEml.classList.add("prank");
+
+    // remove the class name after animate ends
+    displayEml.addEventListener("animationend", () => {
+      displayEml.classList.remove("prank"); // line 27 and 28 to remove the animation soon after the prank is over.
+    });
   }
+
+  //   displayEml.classList.add("prank");
 
   const total = eval(textToDisplay) + prankNum;
   //   display(total); //calling and invoking the function
@@ -113,8 +117,8 @@ const resetDisplay = () => {
 };
 
 const randomNumber = () => {
-  const num = Math.random() * 10; //0-10
-  console.log(num, "from randomNumber");
+  const num = Math.round(Math.random() * 10); //0-10 This is also round up the number
+  //   console.log(num, "from randomNumber");
   return num <= 6 ? num : 0; // we can set the threshhold
   //   to increase or decrease the probability of getting the wrong total.
 };

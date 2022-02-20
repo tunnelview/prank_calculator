@@ -32,6 +32,12 @@ buttons.forEach((btn) => {
       return onTotal();
     }
 
+    //cut the last charater from the display
+    if (val === "C") {
+      textToDisplay = textToDisplay.slice(0, -1);
+      return display(textToDisplay);
+    }
+
     textToDisplay += val; // concatenate the pressed values
     // console.log(btn);
 

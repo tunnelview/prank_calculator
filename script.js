@@ -79,10 +79,14 @@ const display = (toDisplay) => {
 };
 
 const onTotal = () => {
+  const prankNum = randomNumber(); // const and prankNum was written together, fixed it.
   const total = eval(textToDisplay) + prankNum;
-  constprankNum = randomNumber();
   //   display(total); //calling and invoking the function
   console.log(prankNum);
+
+  display(total);
+  textToDisplay = ""; // this is done to ensure, that the display is empty
+  //   when we start performing the operation once again, else it start adding the previous number
 };
 
 const resetDisplay = () => {
@@ -93,5 +97,6 @@ const resetDisplay = () => {
 const randomNumber = () => {
   const num = Math.random() * 10; //0-10
   console.log(num, "from randomNumber");
-  return num <= 3 ? num : 0;
+  return num <= 6 ? num : 0; // we can set the threshhold
+  //   to increase or decrease the probability of getting the wrong total.
 };

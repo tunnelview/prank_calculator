@@ -18,6 +18,15 @@ buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     //   grab the value
     const val = btn.innerText;
+
+    // now capturing the "= equals to" as the eval function is already doing
+    // an operation. We need to capture that result before the equals to is
+    // displayed on the result section - in line 26 - 28.
+
+    if (val === "=") {
+      return onTotal();
+    }
+
     textToDisplay += val; // concatenate the pressed values
     // console.log(btn);
 

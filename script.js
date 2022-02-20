@@ -19,6 +19,11 @@ buttons.forEach((btn) => {
     //   grab the value
     const val = btn.innerText;
 
+    //AC clear everything from the display
+    if (val === "AC") {
+      return resetDisplay();
+    }
+
     // now capturing the "= equals to" as the eval function is already doing
     // an operation. We need to capture that result before the equals to is
     // displayed on the result section - in line 26 - 28.
@@ -47,4 +52,9 @@ const display = (toDisplay) => {
 const onTotal = () => {
   const total = eval(textToDisplay);
   display(total); //calling and invoking the function
+};
+
+const resetDisplay = () => {
+  display("0.00");
+  textToDisplay = "";
 };

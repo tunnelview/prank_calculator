@@ -20,7 +20,17 @@ buttons.forEach((btn) => {
     //   grab the value
     const val = btn.innerText;
 
+    // don't allow to click on symbols at the beginning
     if (textToDisplay.length < 1 && symbols.includes(val)) return; // this is prevent the user from pressing the symbols first
+
+    // if operator already exists, replace it with the new one (basically, no two sysbols, one after the other)
+    if (symbols.includes(lastChar) && symbols.includes(val)) {
+      // this line means, if the last character is already a symbol,
+      // the user presses another symbol, then
+      textToDisplay = textToDisplay.slice(0, -1); // remove the last char from the string
+
+      // add the incoming operator
+    }
 
     //AC clear everything from the display
     if (val === "AC") {

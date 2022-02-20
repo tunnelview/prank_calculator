@@ -19,6 +19,10 @@ buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     //   grab the value
     const val = btn.innerText;
+    const lastChar = textToDisplay[textToDisplay.length - 1];
+
+    // if .exit, don't let user enter another .
+    if (val === "." && textToDisplay.includes(".")) return;
 
     // don't allow to click on symbols at the beginning
     if (textToDisplay.length < 1 && symbols.includes(val)) return; // this is prevent the user from pressing the symbols first

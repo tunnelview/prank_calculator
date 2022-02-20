@@ -21,8 +21,8 @@ buttons.forEach((btn) => {
     const val = btn.innerText;
     const lastChar = textToDisplay[textToDisplay.length - 1];
 
-    // if .exit, don't let user enter another .
-    if (val === "." && textToDisplay.includes(".")) return;
+    // if .exist, don't let user enter another .
+    if (val === "." && textToDisplay.includes(".")) return; // There is a bug in the code
 
     // don't allow to click on symbols at the beginning
     if (textToDisplay.length < 1 && symbols.includes(val)) return; // this is prevent the user from pressing the symbols first
@@ -79,11 +79,19 @@ const display = (toDisplay) => {
 };
 
 const onTotal = () => {
-  const total = eval(textToDisplay);
-  display(total); //calling and invoking the function
+  const total = eval(textToDisplay) + prankNum;
+  constprankNum = randomNumber();
+  //   display(total); //calling and invoking the function
+  console.log(prankNum);
 };
 
 const resetDisplay = () => {
   display("0.00");
   textToDisplay = "";
+};
+
+const randomNumber = () => {
+  const num = Math.random() * 10; //0-10
+  console.log(num, "from randomNumber");
+  return num <= 3 ? num : 0;
 };

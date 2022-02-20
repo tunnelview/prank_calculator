@@ -50,10 +50,10 @@ buttons.forEach((btn) => {
 });
 
 const display = (toDisplay) => {
-  displayEml.innerText = toDisplay;
+  displayEml.innerText = toDisplay || "0.00"; // in this line,
+  //   we are saying, either display the result else display 0.00,
+  // this is done so that the C press doesn's shrink the display box
 };
-
-// create a function to
 
 const onTotal = () => {
   const total = eval(textToDisplay);
